@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.in28minutes.todo.TodoService;
 
-@WebServlet(urlPatterns = "/todo.do")
+@WebServlet(urlPatterns = "/add-todo.do")
 public class AddTodoServlet extends HttpServlet{
  
 	/**
