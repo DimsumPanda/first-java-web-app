@@ -21,16 +21,11 @@ public class TodoServlet extends HttpServlet{
 	
 	protected void doGet(HttpServletRequest request, 
 			HttpServletResponse response) throws ServletException, IOException {
-		
-		//Create a new Session instead of just setting the attribute on the request.
 		request.getSession().setAttribute("todos", todoService.retrieveTodos());
-//		request.setAttribute("todos", todoService.retrieveTodos());
 		request.getRequestDispatcher("/WEB-INF/views/todo.jsp").forward(request, response);
 	}
 	protected void doPost(HttpServletRequest request, 
 			HttpServletResponse response) throws ServletException, IOException {
-		String newTodo = request.getParameter("todo");
-		todoService.addTodo(new Todo(newTodo));
 		request.getSession().setAttribute("todos", todoService.retrieveTodos());
 		request.getRequestDispatcher("/WEB-INF/views/todo.jsp").forward(request, response);
 	}
